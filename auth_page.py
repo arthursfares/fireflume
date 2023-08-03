@@ -33,11 +33,10 @@ def _signup_callback():
     st.session_state["signing"] = False
 
 def _show_signup_section():
-    username = st.text_input(label="username")
     email = st.text_input(label="email")
     password = st.text_input(label="password", type="password")
     buttons_row = row(3, vertical_align="center")
-    buttons_row.button("Sign In", on_click=_signup_callback, type="primary", use_container_width=True)
+    buttons_row.button("Sign Up", on_click=_signup_callback, type="primary", use_container_width=True)
 
 
 
