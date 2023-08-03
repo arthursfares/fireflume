@@ -1,6 +1,6 @@
 import streamlit as st
 
-from login_page import show_auth_page
+from auth_page import show_auth_page
 from main_page import show_main_page
 
 def main():
