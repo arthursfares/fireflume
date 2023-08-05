@@ -1,5 +1,5 @@
 import pyrebase
-from firebase_config import firebase_config
+from .firebase_config import firebase_config
 
 class Singleton(type):
     _instances = {}
