@@ -26,8 +26,13 @@ def _goto_signup_callback():
     st.session_state["signing"] = True
     clear_text_input()
 
-def _forgot_password():
-    pass
+def _forgot_password(email):
+    try:
+        auth_firebase.reset_password(email)
+        st.success("Access e-mail to reset password")
+    except:
+        st.error("Could not send reset e-mail")
+
 
 def _show_login_section():
     email = st.text_input(label="email", key="signin_email")
@@ -35,7 +40,7 @@ def _show_login_section():
     buttons_row = row([1, 1, 1], vertical_align="center")
     buttons_row.button("Sign In", on_click=_login_callback, args=(email, password), type="primary", use_container_width=True)
     buttons_row.button("Create account", on_click=_goto_signup_callback, use_container_width=True)
-    buttons_row.button("Forgot password?", on_click=_forgot_password, use_container_width=True)
+    buttons_row.button("Forgot password?", on_click=_forgot_password, args=(email), use_container_width=True)
 
 
 
