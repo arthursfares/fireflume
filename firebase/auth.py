@@ -27,3 +27,6 @@ class AuthFirebase(metaclass=Singleton):
         self.auth.current_user = None
         print(self.auth.current_user)
         # print(response)
+
+    def reset_password(self, email):
+        response = self.auth.send_password_reset_email(email)
