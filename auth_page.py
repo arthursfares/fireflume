@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_extras.row import row
-from auth_firebase import AuthFirebase
+from firebase.auth import AuthFirebase
 
 auth_firebase = AuthFirebase(); 
 
