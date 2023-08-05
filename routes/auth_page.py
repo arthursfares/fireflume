@@ -48,12 +48,16 @@ def _signup_callback(email: str, password: str, confirm_password: str):
         except:
             st.error("Inform a valid email and password")
 
+def _goto_signin_callback():
+    st.session_state["signing"] = False
+
 def _show_signup_section():
     email = st.text_input(label="email")
     password = st.text_input(label="password", type="password")
     confirm_password = st.text_input(label="confirm password", type="password")
     buttons_row = row(3, vertical_align="center")
     buttons_row.button("Sign Up", on_click=_signup_callback, args=(email, password, confirm_password), type="primary", use_container_width=True)
+    buttons_row.button("Sign In", on_click=_goto_signin_callback, use_container_width=True)
 
 def show_auth_page():
     if not st.session_state["signing"]:
