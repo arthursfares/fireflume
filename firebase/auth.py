@@ -10,7 +10,10 @@ class Singleton(type):
 
 class AuthFirebase(metaclass=Singleton):
     def __init__(self):
-        firebase = pyrebase.initialize_app(st.secrets["firebase_config"])
+        config = {}
+        for key in st.secrets:
+            config[str(key)] = st.secrets[str(key)]
+        firebase = pyrebase.initialize_app()
         self.auth = firebase.auth()
 
     def sign_in(self, email, password):
