@@ -5,7 +5,7 @@ from routes.auth_page import show_auth_page
 from routes.main_page import show_main_page
 
 def main():
-    title_html = "<h1 style='text-align: center;'>Flume</h1>"
+    title_html = "<h1 style='text-align: center;'>FireFlume</h1>"
     st.markdown(title_html, unsafe_allow_html=True)
     if "logged" not in st.session_state:
         st.session_state["logged"] = False
