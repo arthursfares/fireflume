@@ -1,4 +1,5 @@
 import pyrebase
+import streamlit as st
 from .firebase_config import firebase_config
 
 class Singleton(type):
@@ -10,7 +11,7 @@ class Singleton(type):
 
 class AuthFirebase(metaclass=Singleton):
     def __init__(self):
-        firebase = pyrebase.initialize_app(firebase_config)
+        firebase = pyrebase.initialize_app(st.secrets["firebase_config"])
         self.auth = firebase.auth()
 
     def sign_in(self, email, password):
