@@ -1,6 +1,5 @@
 import pyrebase
 import streamlit as st
-from .firebase_config import firebase_config
 
 class Singleton(type):
     _instances = {}
