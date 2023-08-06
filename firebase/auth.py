@@ -13,7 +13,7 @@ class AuthFirebase(metaclass=Singleton):
         config = {}
         for key in st.secrets:
             config[str(key)] = st.secrets[str(key)]
-        firebase = pyrebase.initialize_app()
+        firebase = pyrebase.initialize_app(config)
         self.auth = firebase.auth()
 
     def sign_in(self, email, password):
