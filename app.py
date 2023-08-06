@@ -7,6 +7,8 @@ from routes.main_page import show_main_page
 def main():
     title_html = "<h1 style='text-align: center;'>FireFlume</h1>"
     st.markdown(title_html, unsafe_allow_html=True)
+    title_html = "<h3 style='text-align: center;'>streamlit firebase integration</h3>"
+    st.markdown(title_html, unsafe_allow_html=True)
     if "logged" not in st.session_state:
         st.session_state["logged"] = False
         st.session_state["signing"] = False
