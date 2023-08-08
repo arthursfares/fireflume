@@ -25,18 +25,13 @@ class AuthFirebase(metaclass=Singleton):
 
     def sign_in(self, email, password):
         response = self.auth.sign_in_with_email_and_password(email, password)
-        print(self.auth.current_user)
-        # print(response)
+        # current user id values can be accessed with self.auth.current_user
 
     def sign_up(self, email, password):
         response = self.auth.create_user_with_email_and_password(email, password)
-        # print(response)
 
     def sign_out(self):
-        print(self.auth.current_user)
         self.auth.current_user = None
-        print(self.auth.current_user)
-        # print(response)
 
     def reset_password(self, email):
         response = self.auth.send_password_reset_email(email)
