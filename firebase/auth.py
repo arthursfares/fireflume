@@ -16,7 +16,7 @@ class AuthFirebase(metaclass=Singleton):
         for key in st.secrets:
             config[str(key)] = st.secrets[str(key)]
         firebase = pyrebase.initialize_app(config)
-        ''' for config values stored in python firebase_config.py file '''
+        ''' for config values stored in firebase_config.py file '''
         # firebase = pyrebase.initialize_app(firebase_config)
         ''' services initialization '''
         self.auth = firebase.auth()
