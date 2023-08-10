@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_extras.row import row
 
 from routes.auth_page import show_auth_page
 from routes.main_page import show_main_page
