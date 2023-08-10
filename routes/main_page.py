@@ -1,11 +1,11 @@
 import streamlit as st
 from streamlit_extras.row import row
-from firebase.auth import AuthFirebase
+from firebase.firebase import Firebase
 
-auth_firebase = AuthFirebase()
+firebase = Firebase()
 
 def _logout_callback():
-    auth_firebase.sign_out()
+    firebase.sign_out()
     st.session_state["logged"] = False
 
 def show_main_page():
